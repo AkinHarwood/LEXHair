@@ -24,12 +24,7 @@ ENV PORT=4000
 EXPOSE 4000
 
 # Persist the SQLite database and uploaded files outside the container layer.
-VOLUME ["/srv/server/data", "/srv/server/uploads"]
+# Configure Railway Volumes mounted at /srv/server/data and /srv/server/uploads
+# via the Railway dashboard instead of a Docker VOLUME instruction.
 
 CMD ["node", "src/index.js"]
-
-git init
-git add -A
-git commit -m "Initial commit"
-git remote add origin https://github.com/AkinHarwood/LEXHair.git
-git push -u origin main
