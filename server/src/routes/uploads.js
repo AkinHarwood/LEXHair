@@ -7,7 +7,7 @@ const { authenticate } = require("../lib/auth");
 
 const router = express.Router();
 
-const UPLOAD_DIR = path.join(__dirname, "..", "..", "uploads");
+const UPLOAD_DIR = process.env.UPLOAD_DIR || path.join(__dirname, "..", "..", "uploads");
 fs.mkdirSync(UPLOAD_DIR, { recursive: true });
 
 const MAX_FILE_SIZE = 25 * 1024 * 1024; // 25MB — plenty for an internal team tool
