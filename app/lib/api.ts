@@ -1,4 +1,7 @@
-export const API_URL = process.env.EXPO_PUBLIC_API_URL || "http://localhost:4000";
+import { Platform } from "react-native";
+
+export const API_URL =
+  process.env.EXPO_PUBLIC_API_URL || (Platform.OS === "web" ? "" : "http://localhost:4000");
 
 export class ApiError extends Error {}
 
