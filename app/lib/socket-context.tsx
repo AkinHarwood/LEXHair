@@ -33,7 +33,7 @@ export function SocketProvider({ children }: { children: React.ReactNode }) {
       return;
     }
 
-    const socket = io(API_URL, { auth: { token } });
+    const socket = io(API_URL || undefined, { auth: { token } });
     setSocketInstance(socket);
 
     socket.on("connect", () => setConnected(true));
